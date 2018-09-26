@@ -7,8 +7,80 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
+* {
+    box-sizing: border-box;
+}
+
 body {font-family: "Lato", sans-serif}
 .mySlides {display: none}
+
+
+.header {
+    text-align: center;
+    padding: 32px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 800px) {
+    .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+.footer a{
+ text-align:right;
+ text-decoration:none;
+ }
+ .footer a:hover {
+    background-color: #ddd;
+    color: black;
+}
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1; 
+    padding-top: 20px; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 70%; 
+    overfow: auto;
+	
+}
+.modal-content {
+    background-color: AliceBlue;
+    margin: auto;
+    padding: 20px;
+	width:50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-radius:5%;
+}
 </style>
 <body>
 
@@ -17,14 +89,15 @@ body {font-family: "Lato", sans-serif}
   <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-16 w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="Home.html" class="w3-bar-item w3-button w3-padding-16">HOME</a>
-    <a href="Home.html#about" class="w3-bar-item w3-button w3-padding-16 w3-hide-small">ABOUT US</a>
-    <a href="Home.html#contact" class="w3-bar-item w3-button w3-padding-16 w3-hide-small">CONTACT US</a>
-
+    <a href="#about" class="w3-bar-item w3-button w3-padding-16 w3-hide-small">ABOUT US</a>
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-16 w3-hide-small">CONTACT US</a>
+    
     <div class="w3-dropdown-hover w3-hide-small">
       <button class="w3-padding-16 w3-button" title="MORE">MORE <i class="fa fa-caret-down"></i></button>     
       <div class="w3-dropdown-content w3-bar-block w3-card-4">
         <a href="members.html" class="w3-bar-item w3-button">Members</a>
         <a href="Gallery and Events.html" class="w3-bar-item w3-button" style="background-color:DarkGrey">Gallery and Events</a>
+		
       </div>
     </div>
   </div>
@@ -32,122 +105,140 @@ body {font-family: "Lato", sans-serif}
 
 <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
 <div id="navDemo" class="w3-bar-block w3-light-grey w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-  <a href="#" class="w3-bar-item w3-button w3-padding-medium" onclick="myFunction()">Contact Us</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-medium" onclick="myFunction()">Gallery and Events</a>
-  <a href="#" class="w3-bar-item w3-button w3-padding-medium" onclick="myFunction()">Members</a>
+  <a href="#contact" class="w3-bar-item w3-button w3-padding-medium" onclick="myFunction()">Contact Us</a>
+  <a href="Gallery and Events.html" class="w3-bar-item w3-button w3-padding-medium" onclick="myFunction()" style="background-color:DarkGrey">Gallery and Events</a>
+  <a href="members.html" class="w3-bar-item w3-button w3-padding-medium" onclick="myFunction()">Members</a>
 </div>
-
 
 <!-- Page content -->
-<div class="w3-container">
-<div class="w3-column-padding">
- <div class="w3-row-padding" style="margin:0 -16px">
-  <div class="w3-col s4">
-    <img src="mutantsgp-3.jpeg" style="width:100%;cursor:pointer"
-    onclick="openModal();currentDiv(1)" class="w3-hover-shadow">
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+<div class="header">
+  <h1>Mutants Gallery</h1>
   </div>
-  <div class="w3-col s4">
-    <img src="mutantsgp-4.jpeg" style="width:100%;cursor:pointer"
-    onclick="openModal();currentDiv(2)" class="w3-hover-shadow">
+
+<!-- Photo Grid -->
+<div class="row"> 
+  <div class="column">
+    <img src="mutantsgp-3.jpeg" style="width:100%">
+    <img src="mutantsgp-4.jpeg" style="width:100%">
+    <img src="mutantsgp-5.jpeg" style="width:100%">
+    <img src="mutantsgp-6.jpeg" style="width:100%">
+    <img src="mutantsgp-1.jpeg" style="width:100%">
+    <img src="mutantsgp-2.jpeg" style="width:100%">
+    <img src="mutantsgp-3.jpeg" style="width:100%">
   </div>
-  <div class="w3-col s4">
-    <img src="mutantsgp-5.jpeg" style="width:100%;cursor:pointer"
-    onclick="openModal();currentDiv(3)" class="w3-hover-shadow">
+  <div class="column">
+    <img src="mutantsgp-3.jpeg" style="width:100%">
+    <img src="mutantsgp-3.jpeg" style="width:100%">
+    <img src="mutantsgp-3.jpeg" style="width:100%">
+    <img src="mutantsgp-3.jpeg" style="width:100%">
+    <img src="mutantsgp-3.jpeg" style="width:100%">
+    <img src="mutantsgp-3.jpeg" style="width:100%">
+  </div>  
+  <div class="column">
+    <img src="mutantsgp-3.jpeg" style="width:100%">
+    <img src="mutantsgp-3.jpeg" style="width:100%">
+    <img src="mutantsgp-3.jpeg" style="width:100%">
+    <img src="mutantsgp-3.jpeg" style="width:100%">
+    <img src="mutantsgp-3.jpeg" style="width:100%">
+    <img src="mutantsgp-3.jpeg" style="width:100%">
+    <img src="mutantsgp-3.jpeg" style="width:100%">
   </div>
-  <div class="w3-col s4">
-    <img src="mutantsgp-6.jpeg" style="width:100%;cursor:pointer"
-    onclick="openModal();currentDiv(3)" class="w3-hover-shadow">
+  <div class="column">
+    <img src="mutantsgp-3.jpeg" style="width:100%">
+    <img src="mutantsgp-3.jpeg" style="width:100%">
+    <img src="mutantsgp-3.jpeg" style="width:100%">
+    <img src="mutantsgp-3.jpeg" style="width:100%">
+    <img src="mutantsgp-3.jpeg" style="width:100%">
+    <img src="mutantsgp-3.jpeg" style="width:100%">
+    <img src="mutantsgp-3.jpeg" style="width:100%">
   </div>
- </div>
+</div>
 </div>
 
-<div id="myModal" class="w3-modal w3-black">
- <span class="w3-text-white w3-xxlarge w3-hover-text-grey w3-container w3-display-topright" onclick="closeModal()" style="cursor:pointer">×</span>
- <div class="w3-modal-content">
-
-  <div class="w3-content" style="max-width:1200px">
-   <img class="mySlides" src="mutantsgp-3.jpeg" style="width:100%">
-   <img class="mySlides" src="mutantsgp-4.jpeg" style="width:100%">
-   <img class="mySlides" src="mutantsgp-5.jpeg" style="width:100%">
-   <img class="mySlides" src="mutantsgp-6.jpeg" style="width:100%">
-   <div class="w3-row w3-black w3-center">
-    <div class="w3-display-container">
-     <p id="caption"></p>
-     <span class="w3-display-left w3-btn" onclick="plusDivs(-1)">❮</span>
-     <span class="w3-display-right w3-btn" onclick="plusDivs(1)">❯</span>
-    </div>
-    <div class="w3-col s4">
-     <img class="demo w3-opacity w3-hover-opacity-off" src="mutantsgp-3.jpeg" style="width:100%" onclick="currentDiv(1)" alt="Nature and sunrise">
-    </div>
-    <div class="w3-col s4">
-     <img class="demo w3-opacity w3-hover-opacity-off" src="mutantsgp-4.jpeg" style="width:100%" onclick="currentDiv(2)" alt="French Alps">
-    </div>
-    <div class="w3-col s4">
-     <img class="demo w3-opacity w3-hover-opacity-off" src="mutantsgp-5.jpeg" style="width:100%" onclick="currentDiv(3)" alt="Mountains and fjords">
-    </div>
-    <div class="w3-col s4">
-     <img class="demo w3-opacity w3-hover-opacity-off" src="mutantsgp-6.jpeg" style="width:100%" onclick="currentDiv(3)" alt="Mountains and fjords">
-    </div>
-   </div> <!-- End row -->
-  </div> <!-- End w3-content -->
-  
- </div> <!-- End modal content -->
-</div> <!-- End modal -->
-
-</div>
-
-
+<!-- Events -->
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="about">
+    <h2 class="w3-wide">Events and Acheivements</h2>
+    <p class="w3-justify">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+      adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    
+  </div>
 
 <!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+<footer class="w3-container w3-padding-32 w3-light-grey w3-xlarge" style=" position:sticky; bottom:0px;">
+ <div style="display:inline;"> 
   <i class="fa fa-facebook-official w3-hover-opacity"></i>
   <i class="fa fa-instagram w3-hover-opacity"></i>
   <i class="fa fa-snapchat w3-hover-opacity"></i>
   <i class="fa fa-pinterest-p w3-hover-opacity"></i>
   <i class="fa fa-twitter w3-hover-opacity"></i>
   <i class="fa fa-linkedin w3-hover-opacity"></i>
-  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+ </div> 
+  <div class="footer">
+  <a class="w3-right w3-large w3-padding-5" type="button"id="myBtn" style="cursor:pointer;">Meet The Team</a>
+
+
+<div id="myModal" class="modal" style="margin-top:50px;">
+  <div class="modal-content">
+     <div class="modal-header">
+        <button type="button"class="close">Close</button>
+        <h3 class="modal-title">Meet The Team</h3><hr><br>
+     </div>
+     <div class="modal-body">
+            <center>
+              <img src="Me.jpg"height="200"width="200"style="border-radius:100%;object-fit:cover">
+              <p><b>Pooja Verma</b> ECE (2016-2020)</p>
+            </center>			  
+            <center>
+			  <img src="Mukul.jpg"height="200"width="200"style="border-radius:100%;object-fit:cover">
+              <p><b>Mukul Sharma</b> ECE (2016-2020)</p>
+            </center>
+          </div>
+     </div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+span.onclick = function() {
+    modal.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+    var x = document.getElementById("navDemo");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+    } else { 
+        x.className = x.className.replace(" w3-show", "");
+    }
+}
+
+
+</script>
+</div>
+  
 </footer>
 
 
-<script>
-function openModal() {
-  document.getElementById('myModal').style.display = "block";
-}
 
-function closeModal() {
-  document.getElementById('myModal').style.display = "none";
-}
 
-var slideIndex = 1;
-showDivs(slideIndex);
 
-function plusDivs(n) {
-  showDivs(slideIndex += n);
-}
 
-function currentDiv(n) {
-  showDivs(slideIndex = n);
-}
-
-function showDivs(n) {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  var captionText = document.getElementById("caption");
-  if (n > x.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = x.length}
-  for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-     dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
-
-  }
-  x[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " w3-opacity-off";
-  captionText.innerHTML = dots[slideIndex-1].alt;
-}
-</script>
 </body>
 </html>
