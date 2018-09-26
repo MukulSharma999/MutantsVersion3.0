@@ -27,13 +27,31 @@ body {font-family: "Lato", sans-serif}
 }
 
 /* Create four equal columns that sits next to each other */
-.column {
+.columnA {
     flex: 25%;
     max-width: 25%;
-    padding: 0 4px;
+    padding:4px;
+}
+.columnB {
+    flex: 25%;
+    max-width: 25%;
+    padding:4px;
+}
+.columnC {
+    flex: 50%;
+    max-width: 50%;
+    padding:4px;
 }
 
-.column img {
+.columnA img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+.columnB img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+.columnC img {
     margin-top: 8px;
     vertical-align: middle;
 }
@@ -89,8 +107,8 @@ body {font-family: "Lato", sans-serif}
   <div class="w3-bar w3-black w3-card">
     <a class="w3-bar-item w3-button w3-padding-16 w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
     <a href="Home.html" class="w3-bar-item w3-button w3-padding-16">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button w3-padding-16 w3-hide-small">ABOUT US</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-padding-16 w3-hide-small">CONTACT US</a>
+    <a href="Home.html#about" class="w3-bar-item w3-button w3-padding-16 w3-hide-small">ABOUT US</a>
+    <a href="Home.html#contact" class="w3-bar-item w3-button w3-padding-16 w3-hide-small">CONTACT US</a>
     
     <div class="w3-dropdown-hover w3-hide-small">
       <button class="w3-padding-16 w3-button" title="MORE">MORE <i class="fa fa-caret-down"></i></button>     
@@ -105,7 +123,7 @@ body {font-family: "Lato", sans-serif}
 
 <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
 <div id="navDemo" class="w3-bar-block w3-light-grey w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-  <a href="#contact" class="w3-bar-item w3-button w3-padding-medium" onclick="myFunction()">Contact Us</a>
+  <a href="Home.html#contact" class="w3-bar-item w3-button w3-padding-medium" onclick="myFunction()">Contact Us</a>
   <a href="Gallery and Events.html" class="w3-bar-item w3-button w3-padding-medium" onclick="myFunction()" style="background-color:DarkGrey">Gallery and Events</a>
   <a href="members.html" class="w3-bar-item w3-button w3-padding-medium" onclick="myFunction()">Members</a>
 </div>
@@ -119,55 +137,44 @@ body {font-family: "Lato", sans-serif}
 
 <!-- Photo Grid -->
 <div class="row"> 
-  <div class="column">
-    <img src="mutantsgp-3.jpeg" style="width:100%">
+  <div class="columnA">
+    <img src="mutantsgp-7.jpeg" style="width:100%">
     <img src="mutantsgp-4.jpeg" style="width:100%">
     <img src="mutantsgp-5.jpeg" style="width:100%">
+   
+  </div>
+  <div class="columnB">
     <img src="mutantsgp-6.jpeg" style="width:100%">
+    <img src="mutantsgp-9.jpeg" style="width:100%">
+    <img src="mutantsgp-8.jpeg" style="width:100%">
+    
+  </div>  
+  <div class="columnC">
+    <img src="mutantsgp-3.jpeg" style="width:100%">
     <img src="mutantsgp-1.jpeg" style="width:100%">
     <img src="mutantsgp-2.jpeg" style="width:100%">
-    <img src="mutantsgp-3.jpeg" style="width:100%">
   </div>
-  <div class="column">
-    <img src="mutantsgp-3.jpeg" style="width:100%">
-    <img src="mutantsgp-3.jpeg" style="width:100%">
-    <img src="mutantsgp-3.jpeg" style="width:100%">
-    <img src="mutantsgp-3.jpeg" style="width:100%">
-    <img src="mutantsgp-3.jpeg" style="width:100%">
-    <img src="mutantsgp-3.jpeg" style="width:100%">
-  </div>  
-  <div class="column">
-    <img src="mutantsgp-3.jpeg" style="width:100%">
-    <img src="mutantsgp-3.jpeg" style="width:100%">
-    <img src="mutantsgp-3.jpeg" style="width:100%">
-    <img src="mutantsgp-3.jpeg" style="width:100%">
-    <img src="mutantsgp-3.jpeg" style="width:100%">
-    <img src="mutantsgp-3.jpeg" style="width:100%">
-    <img src="mutantsgp-3.jpeg" style="width:100%">
-  </div>
-  <div class="column">
-    <img src="mutantsgp-3.jpeg" style="width:100%">
-    <img src="mutantsgp-3.jpeg" style="width:100%">
-    <img src="mutantsgp-3.jpeg" style="width:100%">
-    <img src="mutantsgp-3.jpeg" style="width:100%">
-    <img src="mutantsgp-3.jpeg" style="width:100%">
-    <img src="mutantsgp-3.jpeg" style="width:100%">
-    <img src="mutantsgp-3.jpeg" style="width:100%">
-  </div>
+ 
 </div>
 </div>
 
 <!-- Events -->
-  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="about">
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:1000px" id="about">
     <h2 class="w3-wide">Events and Acheivements</h2>
-    <p class="w3-justify">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-      ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
-      adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    
+    <h4 class="w3-wide">Anugoongj 2017</h4>
+	<p class="w3-justify">Both Indian and Western departments participated in the solo and group events for vocals and instruments in the annual cultural fest of IPU. Prakul Sharma(Western) was the runner up for the title Mr. Anugoonj.</p>
+    <h4 class="w3-wide">Skill India Pre Final-I</h4>
+	<p class="w3-justify">The Indian Department of Mutants delivered a guest performance at the opening ceremony of the first Pre-Final India round(held at IIIT Delhi) for the World Skills Competition for Electronics held in Abu Dhabi.</p>
+    <h4 class="w3-wide">Skill India Pre Final-II</h4>
+	<p class="w3-justify">The Indian Department performed at Maharaja Surajmal Insitute of Technology at the opening ceremony of the second Pre-Final India round for the World Skills Competition for Electronics.</p>
+    <h4 class="w3-wide">Skill India Finals</h4>
+	<p class="w3-justify">The Indian Department gave a guest performance at Delhi Technological University at the opening ceremony of the India-Final round for the World Skills Competition for Electronics.</p>
+     <h4 class="w3-wide">Anugoongj 2018</h4>
+	<p class="w3-justify">Mutants participated in Anugoonj 2018. The Indian Department won the prelims and were the second runner ups in the final round for Group Vocals.</p>
   </div>
 
 <!-- Footer -->
-<footer class="w3-container w3-padding-32 w3-light-grey w3-xlarge" style=" position:sticky; bottom:0px;">
+<footer class="w3-container w3-padding-25 w3-light-grey w3-xlarge" style=" position:sticky; bottom:0px;">
  <div style="display:inline;"> 
   <i class="fa fa-facebook-official w3-hover-opacity"></i>
   <i class="fa fa-instagram w3-hover-opacity"></i>
